@@ -1,3 +1,5 @@
+package Day5.Labs;
+
 public class myLinkedList {
     private int size;
     Node head;
@@ -11,9 +13,27 @@ public class myLinkedList {
  
     }
 
+    public static boolean odd(int val) {
+        if(val % 2 == 0){
+            return false;
+        } else {
+            return true;
+        }
+    }
+
     public void adjust(){
-        //your code here
-     
+        Node p = head;
+        for(int i = 0; i < size - 1 ;){
+            int val1 = p.data;
+            int val2 = p.next.data;
+            if (odd(val1) == odd(val2)){
+                this.addLast(val2);
+                this.deleteAt(i+1);
+            } else {
+                i++;
+                p = p.next;
+            }
+        }
     }
 
     public class Node {
