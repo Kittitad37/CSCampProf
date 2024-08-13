@@ -1,5 +1,7 @@
 package Day5.Labs;
 
+import java.util.Scanner;
+
 public class myLinkedList {
     private int size;
     Node head;
@@ -9,8 +11,38 @@ public class myLinkedList {
     }
     
     public static void main(String[] args) {
-         //your code here
- 
+        myLinkedList ll = new myLinkedList();
+        Scanner sc = new Scanner(System.in);
+        int odd = 0;
+        int even = 0;
+
+        while (true){
+            int val = Integer.parseInt(sc.next());
+            if (val != -1){
+                ll.addFirst(val);
+                if(myLinkedList.odd(val)){
+                    odd++;
+                } else {
+                    even++;
+                }
+            } else {
+                sc.close();
+                break;
+            }
+        }
+        if(odd > even){
+            for (; even < odd ; even++){
+                ll.addFirst(0);
+            }
+        } else if (odd < even){
+            for (; odd < even; odd++) {
+                ll.addFirst(1);
+            }
+        }
+        
+        ll.display();
+        ll.adjust();
+        ll.display();
     }
 
     public static boolean odd(int val) {
@@ -142,5 +174,5 @@ public class myLinkedList {
     }
 }
 
-
+//big - O (n)
 
