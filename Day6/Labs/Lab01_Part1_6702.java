@@ -2,7 +2,7 @@ package Day6.Labs;
 import java.util.Arrays;
 import java.util.Scanner;
 
-public class lab1 {
+public class Lab01_Part1_6702 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         System.out.print("Size N : ");
